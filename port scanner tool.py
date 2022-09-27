@@ -17,7 +17,12 @@ print(" ")
 print("scanning start at :" + str(datetime.now()))
 print("=="*60)
 
-target_ip = input(str("please give the ip address :   "))
+if len(sys.argv)==2:
+    target =socket.gethoustbyname(sys.argv[1])
+else:
+    print("invvalied arguments")
+
+target_ip = input(str("please give the ip address : "))
 
 try:
     for port in range(1,100000):
